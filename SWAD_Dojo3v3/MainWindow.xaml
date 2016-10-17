@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="118" Margin="182,102,0,0" VerticalAlignment="Top" Width="231"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="38" Margin="146,29,0,0" VerticalAlignment="Top" Width="267"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="186" Margin="47,72,0,0" VerticalAlignment="Top" Width="439"/>
+        <Button x:Name="button" Content="Delete" HorizontalAlignment="Left" Height="22" Margin="411,274,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="Currency" HorizontalAlignment="Left" Height="28" Margin="49,30,0,0" VerticalAlignment="Top" Width="71"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="28" Margin="120,30,0,0" VerticalAlignment="Top" Width="147"/>
 
     </Grid>
 </Window>
