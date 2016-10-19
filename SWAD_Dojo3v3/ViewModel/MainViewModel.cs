@@ -1,34 +1,28 @@
 using GalaSoft.MvvmLight;
+using SWAD_Dojo3v3.Entities;
+using System.Collections.ObjectModel;
 
 namespace SWAD_Dojo3v3.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
+    
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        ObservableCollection<Address> list { get; set; }
+        public MainViewModel DataContext { get; private set; }
+
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            //InitializeComponent();
+            this.DataContext = this;
+            list = new ObservableCollection<Address>();
+            createTestData();
+        }
+
+        public void createTestData()
+        {
+            list.Add(new Address("Max","Muster","Mustergasse 33","Musterhausen",1111));
+            list.Add(new Address("Nina", "Niedlich", "Niedlichstrasse 44", "Niedlichen", 2222));
+            list.Add(new Address("Oman", "Olafsen", "Olafgasse 55", "Olafingen", 3333));
         }
     }
 }
