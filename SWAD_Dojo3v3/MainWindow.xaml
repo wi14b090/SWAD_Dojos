@@ -10,11 +10,14 @@
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
-    <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="186" Margin="48,75,0,0" VerticalAlignment="Top" Width="439" ItemsSource="{Binding list}" AutoGenerateColumns="True"/>
-        <Button x:Name="button" Content="Delete" HorizontalAlignment="Left" Height="22" Margin="411,274,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="label" Content="Currency" HorizontalAlignment="Left" Height="28" Margin="49,30,0,0" VerticalAlignment="Top" Width="71"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="28" Margin="120,30,0,0" VerticalAlignment="Top" Width="147"/>
+    <DataGrid ItemsSource="{Binding list}" AutoGenerateColumns="False" Name="dataGrid" HorizontalAlignment="Left" Height="202" Margin="64,44,0,0" VerticalAlignment="Top" Width="406">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
+            <DataGridTextColumn Header="Package" Binding="{Binding package}"/>
+            <DataGridTextColumn Header="Sales price"  Binding="{Binding salesPrice}"/>
+            <DataGridTextColumn Header="Purchase price" Binding="{Binding purchasePrice}"/>
+            <DataGridTextColumn Header="On stock" Binding="{Binding onStock}"/>
+        </DataGrid.Columns>
+    </DataGrid>
 
-    </Grid>
 </Window>
