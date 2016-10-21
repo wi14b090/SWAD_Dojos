@@ -20,9 +20,9 @@ namespace SWAD_Dojo3v3.ViewModel
 
         public void createTestData()
         {
-            list.Add(new SWPackage("Word","Officeware",new decimal(149.99),new decimal(65.44),10));
-            list.Add(new SWPackage("Excel", "Officeware", new decimal(169.99), new decimal(75.44), 10));
-            list.Add(new SWPackage("Power Point", "Officeware", new decimal(189.99), new decimal(85.44), 10));
+            list.Add(new SWPackage("Word","Officeware",new decimal(149.99),new decimal(65.44),2));
+            list.Add(new SWPackage("Excel", "Officeware", new decimal(169.99), new decimal(75.44), 15));
+            list.Add(new SWPackage("Power Point", "Officeware", new decimal(189.99), new decimal(85.44), 33));
 
         }
     }

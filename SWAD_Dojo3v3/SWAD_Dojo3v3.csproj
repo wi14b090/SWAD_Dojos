@@ -75,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\IntTobrushConverter.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\SWPackage.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
