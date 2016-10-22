@@ -3,28 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:SWAD_Dojo3v3.ViewModel"
         xmlns:Converters="clr-namespace:SWAD_Dojo3v3.Converters" x:Class="SWAD_Dojo3v3.MainWindow"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="580.2">
     <Window.Resources>
         <Converters:IntTobrushConverter x:Key="IntTobrushConverter"/>
     </Window.Resources>
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
-    <DataGrid ItemsSource="{Binding list}" AutoGenerateColumns="False" Name="dataGrid" HorizontalAlignment="Left" Height="202" Margin="64,44,0,0" VerticalAlignment="Top" Width="406">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
-            <DataGridTextColumn Header="Package" Binding="{Binding group}"/>
-            <DataGridTextColumn Header="Sales price"  Binding="{Binding salesPrice}"/>
-            <DataGridTextColumn Header="Purchase price" Binding="{Binding purchasePrice}"/>
-            <DataGridTemplateColumn>
-                <DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate>
-                        <Ellipse Height="15" Width="15" Fill="{Binding onStock, Converter={StaticResource IntTobrushConverter}}"/>
-                    </DataTemplate>
-                </DataGridTemplateColumn.CellTemplate>
+    <StackPanel HorizontalAlignment="Left" Height="320" Margin="-3,4,-3.4,-3.2" VerticalAlignment="Top" Width="580">
+        <ComboBox ItemsSource="{Binding listCurr}" SelectedItem="{Binding selectedCurr}" x:Name="currencyBox" HorizontalAlignment="Left" Height="29" Margin="174,0,0,0" Width="221" IsSynchronizedWithCurrentItem="True">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                          <TextBlock Text="{Binding name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+
+        <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="30" Margin="120,0,0,0" Width="338"/>
+        <DataGrid ItemsSource="{Binding listItems}" AutoGenerateColumns="False" x:Name="dataGrid" HorizontalAlignment="Left" Height="259" VerticalAlignment="Top" Width="580">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Package" Binding="{Binding group}"/>
+                <DataGridTextColumn Header="Sales price"  Binding="{Binding salesPrice}"/>
+                <DataGridTextColumn Header="Purchase price" Binding="{Binding purchasePrice}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Ellipse Height="15" Width="15" Fill="{Binding onStock, Converter={StaticResource IntTobrushConverter}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-            
-        </DataGrid.Columns>
-    </DataGrid>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
 
 </Window>
