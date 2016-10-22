@@ -10,6 +10,7 @@ namespace SWAD_Dojo3v3.Entities
     {
         public String name { get; set;}
         public Double oneUnitInEUR {   get; set;}
+        
 
         public Currency(String name, Double oneUnitInEUR)
         {

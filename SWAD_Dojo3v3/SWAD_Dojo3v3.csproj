@@ -79,6 +79,7 @@
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Currency.cs" />
     <Compile Include="Entities\SWPackage.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
